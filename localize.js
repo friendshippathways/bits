@@ -1,38 +1,36 @@
 window.onload = function() {
 
-	// Get the iframe element
-	var iframe = document.getElementById('ytplayeriframe');
-	if (iframe) { // Ensure the iframe exists
-		// Get the current src attribute
-		var src = iframe.getAttribute('src');
+// Get all iframe elements with class 'ytplayeriframe'
+var iframes = document.querySelectorAll('.ytplayeriframe');
 
-		// Define an object with language codes as keys
-		var languages = {
-			'ar': 'Arabic',
-			'fa': 'Farsi',
-			'tl': 'Filipino',
-			'fr': 'French',
-			'id': 'Indonesian',
-			// Add more languages as needed
-		};
+// Define an object with language codes as keys
+var languages = {
+	'ar': 'Arabic',
+	'fa': 'Farsi',
+	'tl': 'Filipino',
+	'fr': 'French',
+	'id': 'Indonesian',
+	// Add more languages as needed
+};
 
-	// Get the current URL
-	var currentUrl = window.location.href;
+// Get the current URL
+var currentUrl = window.location.href;
 
-	// Iterate over each language code
-	Object.keys(languages).forEach(function(langCode) {
-		if (currentUrl.includes('=' + langCode)) {
+// Function to update iframe src based on language code
+function updateIframeSrc(iframe, langCode) {
+    var src = iframe.getAttribute('src');
+    src = src.replace(/(cc_lang_pref=)[^&]+/, '$1' + langCode);
+    src = src.replace(/(hl=)[^&]+/, '$1' + langCode);
+    iframe.setAttribute('src', src);
+}
 
-			// Replace the cc_lang_pref and hl parameters
-			src = src.replace(/(cc_lang_pref=)[^&]+/, '$1' + langCode);
-			src = src.replace(/(hl=)[^&]+/, '$1' + langCode);
+// Iterate over each iframe and apply language settings
+iframes.forEach(function(iframe) {
+    Object.keys(languages).forEach(function(langCode) {
+        if (currentUrl.includes('=' + langCode)) {
+            updateIframeSrc(iframe, langCode);
+        }
+    });
+});
 
-			// Update the iframe src attribute once for the found language code
-			iframe.setAttribute('src', src);
-            
-			// After setting the src
-			//iframe.style.display = 'block';
-			}
-		});
-	}
 };
