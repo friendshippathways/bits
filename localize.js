@@ -10,7 +10,7 @@ window.onload = function() {
 		var languages = {
 			'ar': 'Arabic',
 			'fa': 'Farsi',
-			'tr': 'Filipino',
+			'tl': 'Filipino',
 			'fr': 'French',
 			'id': 'Indonesian',
 			// Add more languages as needed
