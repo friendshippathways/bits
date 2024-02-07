@@ -10,9 +10,9 @@ window.onload = function() {
 		var languages = {
 			'ar': 'Arabic',
 			'fa': 'Farsi',
+			'tr': 'Filipino',
 			'fr': 'French',
 			'id': 'Indonesian',
-			'tr': 'Filipino',
 			// Add more languages as needed
 		};
 
