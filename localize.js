@@ -24,17 +24,17 @@ if (iframe) { // Ensure the iframe exists
     Object.keys(languages).forEach(function(langCode) {
         if (currentUrl.includes('=' + langCode)) {
             // Alert the found language code for testing
-            alert('Language code found: ' + langCode);
+            //alert('Language code found: ' + langCode);
 
             // Alert the original src for testing
-            alert('src before replace: ' + src);
+            //alert('src before replace: ' + src);
 
             // Replace the cc_lang_pref and hl parameters
             src = src.replace(/(cc_lang_pref=)[^&]+/, '$1' + langCode);
             src = src.replace(/(hl=)[^&]+/, '$1' + langCode);
 
             // Alert the replaces src for testing
-            alert('src after replace: ' + src);
+            //alert('src after replace: ' + src);
 
             // Update the iframe src attribute once for the found language code
             iframe.setAttribute('src', src);
