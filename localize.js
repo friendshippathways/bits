@@ -1,71 +1,34 @@
-<script>
-  // Get the iframe element
-  var iframe = document.getElementById('ytplayeriframe');
+// Get the iframe element
+var iframe = document.getElementById('ytplayeriframe');
+if (iframe) { // Ensure the iframe exists
+    // Get the current src attribute
+    var src = iframe.getAttribute('src');
 
-  // Get the current src attribute
-  var src = iframe.getAttribute('src');
+    // Define an object with language codes as keys
+    var languages = {
+        'ar': 'Arabic',
+        'fa': 'Farsi',
+        'fr': 'French',
+        'id': 'Indonesian',
+        'tr': 'Filipino',
+        // Add more languages as needed
+    };
 
-  // Get the current URL
-  var currentUrl = window.location.href;
+    // Get the current URL
+    var currentUrl = window.location.href;
 
-  // Check if the URL contains "=ar"
-  if (currentUrl.includes('=ar')) {
-  	
-  	alert ('ar');
+    // Iterate over each language code
+    Object.keys(languages).forEach(function(langCode) {
+        if (currentUrl.includes('=' + langCode)) {
+            // Alert the found language code for testing
+            alert('Language code found: ' + langCode);
 
-    // Replace the cc_lang_pref parameter with "ar"
-    src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=ar');
+            // Replace the cc_lang_pref and hl parameters
+            src = src.replace(/(cc_lang_pref=)[^&]+/, '$1' + langCode);
+            src = src.replace(/(hl=)[^&]+/, '$1' + langCode);
 
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-    // Replace the hl parameter with "ar"
-    src = src.replace(/hl=[^&]+/, 'hl=ar');
-
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-  }
-
-  // Check if the URL contains "=fa"
-  if (currentUrl.includes('=fa')) {
-  	  	  	
-  	alert ('fa');
-
-    // Replace the cc_lang_pref parameter with "fa"
-    src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=fa');
-
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-    // Replace the hl parameter with "fa"
-    src = src.replace(/hl=[^&]+/, 'hl=fa');
-
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-  }
-
-
-  // Check if the URL contains "=fr"
-  if (currentUrl.includes('=fr')) {
-  	
-  	alert ('fr');
-
-    // Replace the cc_lang_pref parameter with "fr"
-    src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=fr');
-
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-    // Replace the hl parameter with "fr"
-    src = src.replace(/hl=[^&]+/, 'hl=fr');
-
-    // Update the src attribute
-    iframe.setAttribute('src', src);
-
-  }
-
-  // Reload the iframe source
-  iframe.src = iframe.src;
-</script>
+            // Update the iframe src attribute once for the found language code
+            iframe.setAttribute('src', src);
+        }
+    });
+}
