@@ -10,6 +10,8 @@
 
   // Check if the URL contains "=ar"
   if (currentUrl.includes('=ar')) {
+  	
+  	alert ('ar');
 
     // Replace the cc_lang_pref parameter with "ar"
     src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=ar');
@@ -27,6 +29,8 @@
 
   // Check if the URL contains "=fa"
   if (currentUrl.includes('=fa')) {
+  	  	  	
+  	alert ('fa');
 
     // Replace the cc_lang_pref parameter with "fa"
     src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=fa');
@@ -45,6 +49,8 @@
 
   // Check if the URL contains "=fr"
   if (currentUrl.includes('=fr')) {
+  	
+  	alert ('fr');
 
     // Replace the cc_lang_pref parameter with "fr"
     src = src.replace(/cc_lang_pref=[^&]+/, 'cc_lang_pref=fr');
