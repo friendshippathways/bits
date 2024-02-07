@@ -31,7 +31,7 @@ window.onload = function() {
 			iframe.setAttribute('src', src);
             
 			// After setting the src
-			iframe.style.display = 'block';
+			//iframe.style.display = 'block';
 			iframe.style.visibility = 'visible';
 			}
 		});
