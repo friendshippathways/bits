@@ -1,3 +1,6 @@
+window.onload = function() {
+    // Your script logic here
+
 // Get the iframe element
 var iframe = document.getElementById('ytplayeriframe');
 if (iframe) { // Ensure the iframe exists
@@ -38,3 +41,4 @@ if (iframe) { // Ensure the iframe exists
         }
     });
 }
+};
