@@ -32,6 +32,7 @@ window.onload = function() {
             
 			// After setting the src
 			iframe.style.display = 'block';
+			iframe.style.visibility = 'visible';
 			}
 		});
 	}
