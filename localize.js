@@ -38,6 +38,9 @@ if (iframe) { // Ensure the iframe exists
 
             // Update the iframe src attribute once for the found language code
             iframe.setAttribute('src', src);
+            
+       		// After setting the src
+			iframe.style.display = 'block';
         }
     });
 }
