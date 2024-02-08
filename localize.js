@@ -5,15 +5,15 @@ var iframes = document.querySelectorAll('.ytplayeriframe');
 
 // Define an object with language codes as keys
 var languages = {
-	'ar': 'Arabic',
+    'ar': 'Arabic',
     'bn': 'Bengali',
-	'tl': 'Filipino',
-	'fr': 'French',
-	'ha': 'Hausa',
+    'tl': 'Filipino',
+    'fr': 'French',
+    'ha': 'Hausa',
     'id': 'Indonesian',
     'ms': 'Malay',
     'ps': 'Pashto',
-	'fa': 'Persian',
+    'fa': 'Persian',
     'sw': 'Swahili',
     'tr': 'Turkish',
     'ur': 'Urdu'
