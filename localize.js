@@ -3,7 +3,7 @@ window.onload = function() {
 // Get all iframe elements with class 'ytplayeriframe'
 var iframes = document.querySelectorAll('.ytplayeriframe');
 
-// Define an object with language codes as keys
+// Define an object with YouTube language codes as keys
 var language_mapping = {
     'ar': 'Arabic',
     'bn': 'Bengali',
