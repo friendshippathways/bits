@@ -4,7 +4,7 @@ window.onload = function() {
 var iframes = document.querySelectorAll('.ytplayeriframe');
 
 // Define an object with language codes as keys
-var languages = {
+var language_mapping = {
     'ar': 'Arabic',
     'bn': 'Bengali',
     'tl': 'Filipino',
@@ -33,7 +33,7 @@ function updateIframeSrc(iframe, langCode) {
 
 // Iterate over each iframe and apply language settings
 iframes.forEach(function(iframe) {
-    Object.keys(languages).forEach(function(langCode) {
+    Object.keys(language_mapping).forEach(function(langCode) {
         if (currentUrl.includes('=' + langCode)) {
             updateIframeSrc(iframe, langCode);
         }
